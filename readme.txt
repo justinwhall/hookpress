@@ -1,17 +1,19 @@
 === HookPress ===
-Contributors: mitchoyoshitaka, automattic
+Contributors: jwind, mitchoyoshitaka, automattic
 Author: mitcho (Michael Yoshitaka Erlewine)
-Author URI: http://mitcho.com/
-Plugin URI: http://mitcho.com/code/
-Donate link: http://tinyurl.com/donatetomitcho
+Author URI: http://justinwhall.com/
+Plugin URI: http://justinwhall.com/
+Donate link: https://littlebot.io/make-a-donation/
 Tags: hook, filter, action, plugin, webhook, webhooks, notification, internal
 Requires at least: 3.6
-Tested up to: 4.1
-Stable tag: 1.14
+Tested up to: 4.9.6
+Stable tag: 1.0
 
 HookPress turns your WordPress-internal hooks into webhooks. Possible uses include generating push notifications or extending WordPress with non-PHP.
 
 == Description ==
+
+Forked from [hookpress](https://wordpress.org/plugins/hookpress/)
 
 Webhooks are a simple paradigm for developing instant notifications and mashups based on simple HTTP requests. With HookPress you can set up webhooks so that a specified URL (a public service or something you set up) is requested when certain WordPress actions occur. Possible uses include generating push notifications or using non-PHP web technology to extend WordPress.
 
@@ -32,7 +34,6 @@ Upload the HookPress plugin to your blog's `wp-content/plugins/` directory and a
 
 == Frequently Asked Questions ==
 
-If you have a feature request or question, please use the [HookPress support forum](http://wordpress.org/tags/hookpress).
 
 = How does HookPress affect performance? =
 
@@ -40,62 +41,5 @@ HookPress currently makes requests synchronously so can measurably affect perfor
 
 == Changelog ==
 
-= 1.14 =
-* Additional security hardening for `test.php`, now no longer bundled as a `.php`
-
-= 1.13 =
-* Important security fix to the test endpoint, `test.php`.
-* Code cleanup, fix bugs introduced in previous version.
-
-= 1.12 =
-* Upgraded to work properly with jQuery 1.9+. [Props liquidgecha](https://github.com/mitcho/hookpress/commit/0b21dfec8136d51971a21fb6cbdd4ff2b8d60753).
-* Dropped the initial 0. in the version number, as that was just ridiculous. :)
-
-= 0.1.11 =
-* Fix to register the right number of incoming arguments for actions.
-= 0.1.10 =
-* No longer depends on the Snoopy library; uses `wp_remote_post()` instead. Note that the HTTP referer may no longer be sent correctly.
-* Added the `hookpress_request` filter.
-* Code cleanup
-= 0.1.9 =
-* New snazzy options screen, with [help from Automattic](http://en.blog.wordpress.com/2010/04/14/hook-line-and-sinker/)
-	* added webhook editing
-* Various miscellaneous features: added nonces for security, modularized the code a bit, etc.
-= 0.1.8 =
-* Added more filters—now covers basic + comment filters
-* Marking as compatible through 2.9.9, because it should be.
-* Added version checking and beta offers to the options screen.
-= 0.1.7 =
-* Now supports basically all actions. (Still no actions with no arguments.)
-* Added more filter options—now covers all basic database read filters.
-= 0.1.6 =
-* Added another batch of actions. (Still no actions with no arguments, though... something to consider.)
-* Fixed hooks which referred to the users and links tables.
-= 0.1.5 =
-* Now enforces sending the first field in filters and highlights the first field.
-* Added FAQ note on performance concerns and caching.
-= 0.1.4 =
-* Bugfix: hooks with ID 0 can now be deleted
-* Made HookPress fully localizable - please email before you start localizing to claim your language.
-= 0.1.3 =
-* A small bugfix to the filters list for `save_pre`
-* Initial support for filters with an short list of supported filters
-* Updated `test.php` to return first parameter (to trivially support filters)
-= 0.1.2 =
-* Added support for the `post_url` field
-* Added support for `parent_*` post fields for `save_post` which are sent in case the post is a revision of a previous draft.
-* Fixes a PHP error which displayed on install
-* Disallowed redirects on the webhook - corrects duplicate records when used with PostBin
-= 0.1.1 =
-* Fixed namespace collision with [Yet Another Related Posts Plugin](http://mitcho.com/code/yarpp/).
-* Minor documentation changes.
-= 0.1 =
-* Initial release
-	* supports webhooks based on WP actions
-
-= Future plans =
-
-* Editing webhooks (rather than deleting and adding)
-* More custmization on a per-webhook basis
-
-If you have a feature request or question, please use the <a href='http://wordpress.org/tags/hookpress'>HookPress support forum</a>.
+= 1.0
+* PHP 7 support
